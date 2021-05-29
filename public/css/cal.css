@@ -1,0 +1,23 @@
+.col12{
+	background-color: gray;
+	text-align: right;
+	color: black;	
+}
+
+.col3{
+	background-color: lightgray;
+	height: 100px;
+	text-align: center;
+	border-collapse: collapse;
+	border-bottom: 0.5px solid;
+	border-right: 0.5px solid;	
+}
+
+.col4{
+	background-color: #FA6122;
+	height: 100px;
+	text-align: center;
+	border-collapse: collapse;
+	border-bottom: 0.5px solid;
+	border-right: 0.5px solid;
+}
