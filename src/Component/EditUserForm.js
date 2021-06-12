@@ -79,9 +79,9 @@ function EditUserForm(props) {
         
     )
 }
-var mapDispatchTpProps = {
+var mapDispatchToProps = {
       editUser,
     }
 var mapStateToProps= () =>{}
 
-export default connect(mapStateToProps,mapDispatchTpProps) (EditUserForm);
+export default connect(mapStateToProps,mapDispatchToProps) (EditUserForm);
