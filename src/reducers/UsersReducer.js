@@ -3,6 +3,9 @@ const initialState = {
 };
 const usersReducer =(state= initialState,action) => {
     switch(action.type) {
+        case 'ADD_ALL_USERS':
+            let users = action.payload;
+            return { users: users};
         case "ADD_USER":
             console.log(action.payload)
             return {...state,users:[...state.users,action.payload]};
