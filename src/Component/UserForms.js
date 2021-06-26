@@ -1,6 +1,6 @@
 import React, { useState }   from 'react';
 import { connect } from 'react-redux';
-import addUser from '../actions/usersActions';
+import{ addUser} from '../actions/usersActions';
 
   
 function UserForms(props) {

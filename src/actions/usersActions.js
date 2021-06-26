@@ -1,70 +1,71 @@
  export function getAllUsers(){
     return (dispatch, state, {getFirestore})=>{
         const db = getFirestore();
-         db.collection('users')
-         .get()
-         .then((results) => {             
+         db.collection('users').onSnapshot(
+             (results) => {             
              let users =[];
              results.forEach((doc)=> {
-               users.push(doc.data());
+               users.push({...doc.data(), id:doc.id});
+
            });
             dispatch({
                 type:'ADD_ALL_USERS',
                 payload:users,
              });
-            })
-            .catch ((error)=> {
-                console.log(error)
-
-             });
-       
-       
-     }
- }
-
-
-
-
-
-
-
-
-
-export function addUser(newUser) {
-    return (dispatch, state, {getFirestore})=>{
-        const db = getFirestore();
-        db.collection('users')
-        .add(newUser)
-        .then(()=>{
-            dispatch({
-                type:"ADD_USER",
-            payload: newUser,
-            });
-
-        })
-            .catch((error)=>{
+            },
+             (error)=> {
                 console.log(error);
-            })
-       
 
- }
-}
-
-     
-
-export function editUser(id, updatedUser) {
-    return{
-        type:"EDIT_USER",
-        payload: { id: id, updatedUserInfo: updatedUser },
-    }
-
-}
- export function deleteUser(id) {
-     return{
-         type: "DELETE_USER",
-         payload: id,
+             });    
      };
  }
 
 
-export default addUser;
+export function addUser(newUser) {
+    
+        return async (dispatch, state, { getFirestore}) =>{
+            const db = getFirestore();
+            try {
+                await db.collection('users').add(newUser);
+            } catch (error) {
+                console.log(error)
+                
+            }
+
+        }
+        
+
+}
+      
+
+export function editUser(id, updatedUser) {
+    
+        return async (dispatch, state, {getFirestore}) =>{
+            const db = getFirestore();
+            try {
+                await db.collection('users').doc(id).update(updatedUser)
+            } catch (error) {
+                console.log(error);
+                
+            }
+     }
+
+}
+ export function deleteUser(id) {
+     
+         return async(dispatch, state, {getFirestore})=>{
+            const db = getFirestore();
+            try {
+                 await db.collection('users').doc(id).delete();
+             } catch (error) {
+                 console.log(error);
+             }
+            
+             
+           
+         
+     }
+     
+ }
+
+
