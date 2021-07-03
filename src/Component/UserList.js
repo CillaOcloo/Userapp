@@ -24,7 +24,7 @@ function UserList(props) {
   
  function mapStateToProps(state) {
   return {
-    users:state.users,
+    users:state.userState.users,
   }
 }
 const mapDispatchToProps ={

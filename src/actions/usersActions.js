@@ -20,7 +20,6 @@
      };
  }
 
-
 export function addUser(newUser) {
     
         return async (dispatch, state, { getFirestore}) =>{
@@ -37,7 +36,6 @@ export function addUser(newUser) {
 
 }
       
-
 export function editUser(id, updatedUser) {
     
         return async (dispatch, state, {getFirestore}) =>{
