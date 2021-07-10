@@ -1,23 +1,46 @@
-.col12{
-	background-color: gray;
-	text-align: right;
-	color: black;	
-}
 
-.col3{
-	background-color: lightgray;
-	height: 100px;
-	text-align: center;
-	border-collapse: collapse;
-	border-bottom: 0.5px solid;
-	border-right: 0.5px solid;	
-}
 
-.col4{
-	background-color: #FA6122;
-	height: 100px;
-	text-align: center;
-	border-collapse: collapse;
-	border-bottom: 0.5px solid;
-	border-right: 0.5px solid;
-}
+body {
+	background-color:rgb(210, 237, 241);
+  }
+  .details {
+	width: 30%;
+	padding: 25px;
+	color: black;
+	
+  }
+  input { width: 450px;
+  border-radius: 5px;
+  padding: 10px 15px; 
+  border: 1px solid black;
+  margin: 8px 0;
+  border-radius: 5px;
+  
+  }
+  .UserItems {
+	padding: 25px;
+	color: black;
+  }
+  
+  .renew {
+	padding: 8px;
+   background-color: rgb(5, 68, 5);
+   border-radius: 5px;
+  
+  }
+  .remove {
+	padding: 8px;
+	background-color:red;
+	border-radius: 5px;
+  
+  }
+  
+  .btn {
+	width: 100px;
+	border-radius: 4px;
+	background-color: rgb(37, 36, 36);
+	color: whitesmoke;
+	
+  
+  }
+  

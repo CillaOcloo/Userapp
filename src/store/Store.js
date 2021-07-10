@@ -5,8 +5,6 @@ import {getFirestore, reduxFirestore} from 'redux-firestore'
 import firebase from '../firebase/config'
 import thunk from 'redux-thunk'
 
-
-
 const reducer =combineReducers ({
     userState: usersReducer,
     firebaseState: firebaseReducer,

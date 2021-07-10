@@ -1,8 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ProtectedRoute from './Component/ProtectedRoute';
 import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
+
+
+
 
 
  function App() {
@@ -11,7 +15,7 @@ import SignUp from './Pages/SignUp';
        <BrowserRouter>
       
        <Switch>
-           <Route exact path="/" component={Dashboard} />
+         <ProtectedRoute exact path="/"  component={Dashboard}/>
            <Route  path="/Login" component={Login} />
            <Route  path="/SignUp" component={SignUp} />
            
